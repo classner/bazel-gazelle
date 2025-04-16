@@ -110,7 +110,7 @@ func runGazelle(mode mode, dirs []string) error {
 	cmd := exec.Command(args[0], args[1:]...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	log.Printf("running gazelle: %s\n", strings.Join(cmd.Args, " "))
+	log.Printf("running patched gazelle: %s\n", strings.Join(cmd.Args, " "))
 	return cmd.Run()
 }
 
