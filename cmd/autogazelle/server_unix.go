@@ -227,6 +227,9 @@ func listDirs(dir string) ([]string, []error) {
 func shouldIgnore(p string) bool {
 	p = strings.TrimPrefix(filepath.ToSlash(p), "./")
 	base := path.Base(p)
+	if strings.HasPrefix(p, ".git/") {
+		return true
+	}
 	return strings.HasPrefix(p, "tools/") || base == ".git" || base == "BUILD" || base == "BUILD.bazel"
 }
 
